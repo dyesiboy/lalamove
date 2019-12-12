@@ -21,7 +21,8 @@ Or install it yourself as:
     $ gem install lalamove
 
 ## Configuration
- # config/initializer/lalamove.rb
+```ruby
+ config/initializer/lalamove.rb
  Lalamove.configure do |config|
     config.mode = :sandbox
     config.key = 'your_key'
@@ -29,6 +30,7 @@ Or install it yourself as:
  end
 
 Set config.mode to either :sandbox or :prod to switch between the sandbox and prod endpoints, keys to the corresponding keys provided by Lalamove.
+```
 
 ## Usage
 
