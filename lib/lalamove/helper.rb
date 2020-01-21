@@ -31,8 +31,8 @@ module Lalamove
     def self.get_header(token, timestamp)
       {
         "Authorization" => "hmac #{token}",
-        "X-LLM-Country" => "PH", # Lalamove.config.county_code
-        "X-Request-ID" => timestamp
+        "X-LLM-Country" => Lalamove.config.country_code,
+        "X-Request-ID" => timestamp.to_s
       }
     end
 
