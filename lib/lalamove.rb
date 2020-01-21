@@ -1,5 +1,6 @@
 require "lalamove/version"
 require "lalamove/configuration"
+require "lalamove/service"
 
 module Lalamove
   class Error < StandardError; end

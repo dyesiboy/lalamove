@@ -1,5 +1,3 @@
-require 'lalamove/helper'
-
 module Lalamove
   class Configuration
     attr_accessor :key, :secret_key
@@ -18,9 +16,5 @@ module Lalamove
   def mode
     return @mode unless @mode.nil?
     :sandbox
-  end
-
-  def quotation(payload)
-    Helper.request('/v2/quotations', payload, "POST")
   end
 end

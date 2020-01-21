@@ -16,7 +16,7 @@ module Lalamove
     end
 
     def self.generate_signature(path, method, timestamp, payload)
-      generat_raw_signature(method, timestamp, path, payload)
+      generate_raw_signature(method, timestamp, path, payload)
       OpenSSL::HMAC.hexdigest('sha256', @secret, raw_signature)
     end
 
@@ -43,6 +43,5 @@ module Lalamove
     def self.request_url(path)
       Lalamove.config.base_url + path
     end
-
   end
 end
