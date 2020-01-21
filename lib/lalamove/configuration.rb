@@ -4,11 +4,6 @@ module Lalamove
     attr_writer :base_url, :mode
   end
 
-  def initialize
-    @key
-    @secret_key
-  end
-
   SANDBOX_BASE_URL = 'https://sandbox-rest.lalamove.com'.freeze
   PROD_BASE_URL = 'https://rest.lalamove.com'.freeze
 
@@ -22,6 +17,4 @@ module Lalamove
     return @mode unless @mode.nil?
     :sandbox
   end
-
-
 end
