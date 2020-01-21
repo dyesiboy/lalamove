@@ -27,6 +27,7 @@ Or install it yourself as:
     config.mode = :sandbox
     config.key = 'your_key'
     config.secret_key = 'your_secret_key'
+    config.country_code = [Check all available countries here](https://developers.lalamove.com/?plaintext--sandbox#available-countries)
  end
 
 Set config.mode to either :sandbox or :prod to switch between the sandbox and prod endpoints, keys to the corresponding keys provided by Lalamove.
