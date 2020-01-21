@@ -1,12 +1,9 @@
+require 'lalamove/helper'
+
 module Lalamove
   class Configuration
     attr_accessor :key, :secret_key
     attr_writer :base_url, :mode
-  end
-
-  def initialize
-    @key
-    @secret_key
   end
 
   SANDBOX_BASE_URL = 'https://sandbox-rest.lalamove.com'.freeze
@@ -23,5 +20,7 @@ module Lalamove
     :sandbox
   end
 
-
+  def quotation(payload)
+    Helper.request('/v2/quotations', payload, "POST")
+  end
 end
