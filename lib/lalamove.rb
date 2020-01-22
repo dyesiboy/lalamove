@@ -1,9 +1,11 @@
-require "lalamove/version"
-require "lalamove/configuration"
-require "lalamove/service"
+# frozen_string_literal: true
 
+require 'lalamove/version'
+require 'lalamove/configuration'
+require 'lalamove/service'
+
+# Lalamove
 module Lalamove
-  class Error < StandardError; end
   class << self
     attr_accessor :configuration
   end
