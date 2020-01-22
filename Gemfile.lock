@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lalamove (0.3.0)
+    lalamove (0.4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -15,6 +15,7 @@ GEM
     minitest (5.14.0)
     multi_xml (0.6.0)
     rake (10.5.0)
+    thor (1.0.1)
 
 PLATFORMS
   ruby
@@ -25,6 +26,7 @@ DEPENDENCIES
   lalamove!
   minitest (~> 5.0)
   rake (~> 10.0)
+  thor
 
 BUNDLED WITH
    2.0.2
