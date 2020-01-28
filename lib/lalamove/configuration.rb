@@ -4,7 +4,7 @@
 module Lalamove
   # Configuration
   class Configuration
-    attr_accessor :key, :secret_key, :country_code
+    attr_accessor :key, :secret_key, :country_code, :base_url, :mode
     attr_writer :base_url, :mode
   end
 
@@ -13,7 +13,7 @@ module Lalamove
 
   def base_url
     return @base_url unless @base_url.nil?
-    return SANDBOX_BASE_URL if mode == ':sandbox'
+    return SANDBOX_BASE_URL if @mode == ':sandbox'
 
     PROD_BASE_URL
   end
