@@ -12,8 +12,9 @@ module Lalamove
   PROD_BASE_URL = 'https://rest.lalamove.com'
 
   def self.base_url
+    puts "test"
     return @base_url unless @base_url.nil?
-    return SANDBOX_BASE_URL if @mode == ':sandbox'
+    return SANDBOX_BASE_URL if @mode == :sandbox
 
     PROD_BASE_URL
   end
