@@ -4,7 +4,7 @@
 module Lalamove
   # Configuration
   class Configuration
-    attr_accessor :key, :secret_key, :contry_code
+    attr_accessor :key, :secret_key, :country_code
     attr_writer :base_url, :mode
   end
 
