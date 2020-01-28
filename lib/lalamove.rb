@@ -3,6 +3,7 @@
 require 'lalamove/version'
 require 'lalamove/configuration'
 require 'lalamove/service'
+require 'lalamove/helper'
 
 # Lalamove
 module Lalamove

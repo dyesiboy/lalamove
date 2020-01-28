@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'openssl'
 require 'base64'
 require 'net/http'
@@ -7,17 +9,19 @@ module Lalamove
   module Helper
     def self.request(path, payload, method)
       timestamp = get_timestamp
+      puts timestamp
       signature = generate_signature(path, method, timestamp, payload)
       token = get_token(key, timestamp, signature)
       headers = get_header(token, timestamp.to_s)
-      request_url = request_url(path)
-
-      HTTParty.post(request_url, :headers => headers, :body => payload.to_json.to_s)
+      url = request_url(path)
+      HTTParty.post(url, :headers => headers, :body => payload.to_json.to_s)
     end
 
     def self.generate_signature(path, method, timestamp, payload)
-      generate_raw_signature(method, timestamp, path, payload)
-      OpenSSL::HMAC.hexdigest('sha256', @secret, raw_signature)
+      raw_signature = generate_raw_signature(method, timestamp, path, payload)
+      puts "Key config"
+      puts Lalamove.config.secret_key
+      OpenSSL::HMAC.hexdigest('sha256', Lalamove.config.secret_key, raw_signature)
     end
 
     def self.generate_raw_signature(method, timestamp,path, payload)

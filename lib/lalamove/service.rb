@@ -5,7 +5,7 @@ require 'lalamove/helper'
 module Lalamove
   # Service
   class Service
-    def quotation(payload)
+    def self.quotation(payload)
       Helper.request('/v2/quotations', payload, 'POST')
     end
   end
