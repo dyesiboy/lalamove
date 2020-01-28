@@ -4,5 +4,5 @@ Lalamove.configure do |config|
   config.mode = :sandbox
   config.key = ''
   config.secret_key = ''
-  congif.country_code = ''
+  config.country_code = ''
 end

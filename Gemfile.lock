@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lalamove (0.6.0)
+    lalamove (0.7.0)
 
 GEM
   remote: https://rubygems.org/
