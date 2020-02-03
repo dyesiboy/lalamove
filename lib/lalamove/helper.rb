@@ -14,6 +14,9 @@ module Lalamove
       token = get_token(Lalamove.config.key, timestamp, signature)
       headers = get_header(token, timestamp.to_s)
       url = request_url(path)
+      puts url
+      puts headers
+      puts payload.to_json.to_s
       HTTParty.post(url, :headers => headers, :body => payload.to_json.to_s)
     end
 
