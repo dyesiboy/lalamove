@@ -21,13 +21,19 @@ Or install it yourself as:
     $ gem install lalamove
 
 ## Configuration
+You can generate initializer using this command
+```ruby
+    rails generate initializer lalamove
+```
+It will generate automatically like this. Or you can create manually.
+
 ```ruby
  config/initializer/lalamove.rb
  Lalamove.configure do |config|
     config.mode = :sandbox
     config.key = 'your_key'
     config.secret_key = 'your_secret_key'
-    config.country_code = [Check all available countries here](https://developers.lalamove.com/?plaintext--sandbox#available-countries)
+    config.country_code = [Check all available countries here](https://developers.lalamove.com/?plaintext--sandbox#available-countries){:target="_blank"}
  end
 
 Set config.mode to either :sandbox or :prod to switch between the sandbox and prod endpoints, keys to the corresponding keys provided by Lalamove.
