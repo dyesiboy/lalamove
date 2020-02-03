@@ -4,7 +4,6 @@ require 'openssl'
 require 'base64'
 require 'net/http'
 require 'httparty'
-require 'configuration'
 
 module Lalamove
   module Helper
