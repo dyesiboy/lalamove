@@ -4,6 +4,7 @@ require 'openssl'
 require 'base64'
 require 'net/http'
 require 'httparty'
+require 'configuration'
 
 module Lalamove
   module Helper
@@ -45,7 +46,7 @@ module Lalamove
     end
 
     def self.request_url(path)
-      Lalamove.config.base_url + path
+      Lalamove::Config.base_url + path
     end
   end
 end
