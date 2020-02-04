@@ -9,21 +9,16 @@ module Lalamove
   module Helper
     def self.request(path, payload, method)
       timestamp = get_timestamp
-      puts timestamp
-      signature = generate_signature(path, method, timestamp, payload)
+      opts = payload.to_json.to_s
+      signature = generate_signature(path, method, timestamp, opts)
       token = get_token(Lalamove.config.key, timestamp, signature)
       headers = get_header(token, timestamp.to_s)
       url = request_url(path)
-      puts url
-      puts headers
-      puts payload.to_json.to_s
-      HTTParty.post(url, :headers => headers, :body => payload.to_json.to_s)
+      HTTParty.post(url, :headers => headers, :body => opts)
     end
 
     def self.generate_signature(path, method, timestamp, payload)
       raw_signature = generate_raw_signature(method, timestamp, path, payload)
-      puts "Key config"
-      puts Lalamove.config.secret_key
       OpenSSL::HMAC.hexdigest('sha256', Lalamove.config.secret_key, raw_signature)
     end
 
