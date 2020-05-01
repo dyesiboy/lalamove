@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'lalamove/version'
 require 'lalamove/configuration'
+require 'lalamove/order'
 require 'lalamove/service'
 require 'lalamove/helper'
 
