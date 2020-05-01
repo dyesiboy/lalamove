@@ -14,9 +14,9 @@ module Lalamove
       token = get_token(Lalamove.config.key, timestamp, signature)
       headers = get_header(token, timestamp.to_s)
       url = request_url(path)
-      if method === 'POST'
+      if method == 'POST'
         HTTParty.post(url, :headers => headers, :body => opts)
-      elseif === 'GET'
+      elsif method == 'GET'
         HTTParty.get(url, :headers => headers)
       else
         HTTParty.put(url, :headers => headers)
